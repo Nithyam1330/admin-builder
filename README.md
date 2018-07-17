@@ -21,3 +21,14 @@ npm install --save hammerjs
 open main.js and paste following 
 
 import 'hammerjs';
+
+
+#Flex Installation
+
+1. install following command 
+npm install @angular/flex-layout@latest --save
+
+2. Import following in app module 
+import { FlexLayoutModule } from ‘@angular/flex-layout’;
+
+imports: [ ..., FlexLayoutModule ], 
