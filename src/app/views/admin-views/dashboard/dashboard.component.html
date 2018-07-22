@@ -1,3 +1,37 @@
-<p>
-  dashboard works!
-</p>
+<!-- The content below is only a placeholder and can be replaced.-->
+<div fxLayout="column" fxLayoutAlign="center center" class="style">
+  <mat-accordion class="accord" multi="true">
+      <mat-expansion-panel expanded="true">
+          <mat-expansion-panel-header class="header">
+              <p class="font font1"> This is the expansion 1 title</p>
+          </mat-expansion-panel-header>
+          <div align="center">
+              <div fxLayout.ls-md='column' fxLayout.gt-md="row">
+                  <mat-card class="card card1" fxFlex="40%" (click)="click()">
+                      <p class="text">CREATE STUDENT</p>
+                  </mat-card>
+                  <div fxFlex="20%"></div>
+                  <mat-card class="card card2" fxFlex="40%">
+                      <p class="text">STUDENT LIST</p>
+                  </mat-card>
+              </div>
+          </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel expanded="true">
+          <mat-expansion-panel-header>
+              <p class="font font2">This is the expansion 2 title</p>
+          </mat-expansion-panel-header>
+          <div align="center">
+              <div fxLayout.ls-md='column' fxLayout.gt-md="row">
+                  <mat-card class="card card3" fxFlex="40%" (click)="click()">
+                      <p class="text">FEE STRUCTURE</p>
+                  </mat-card>
+                  <div fxFlex="20%"></div>
+                  <mat-card class="card card4" fxFlex="40%">
+                      <p class="text">OTHER</p>
+                  </mat-card>
+              </div>
+          </div>
+      </mat-expansion-panel>
+  </mat-accordion>
+</div>
