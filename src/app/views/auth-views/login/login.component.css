@@ -1,0 +1,21 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
+  
+  .card_height_lg {
+    height: 598px;
+  }
+  
+  .button_border {
+  border-radius: 54px 54px 54px 54px;
+  -moz-border-radius: 54px 54px 54px 54px;
+  -webkit-border-radius: 54px 54px 54px 54px;
+  border: 0px solid #000000;
+  }
+  
+  
