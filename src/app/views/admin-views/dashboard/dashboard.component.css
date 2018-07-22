@@ -1,0 +1,38 @@
+.card {
+    width: 250px;
+    height: 100px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-top: 10px;
+
+}
+.card1{
+    background-color: rgb(189, 153, 153);
+    
+}
+.card2{
+    background-color: rgb(207, 200, 138)
+}
+.card3{
+    background-color: rgb(174, 179, 135);
+
+}
+.card4{
+    background-color: rgb(120, 149, 158);
+}
+.text{
+    color: black;
+    font-weight: 500;
+}
+.accord{
+    width: 700px;
+    margin:20px;
+    }
+ .font{
+        font-size: 18px;
+        color: rgb(168, 67, 21);
+        }
+.style{
+    margin-top: 40px;
+}
+        
