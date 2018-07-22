@@ -4,76 +4,25 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { AppRoutingModule } from './app-routing.module';
+import {RouterModule} from '@angular/router';
 
-import {
-  MatAutocompleteModule,
-  MatButtonModule,
-  MatButtonToggleModule,
-  MatCardModule,
-  MatCheckboxModule,
-  MatChipsModule,
-  MatDatepickerModule,
-  MatDialogModule,
-  MatExpansionModule,
-  MatGridListModule,
-  MatIconModule,
-  MatInputModule,
-  MatListModule,
-  MatMenuModule,
-  MatNativeDateModule,
-  MatProgressBarModule,
-  MatProgressSpinnerModule,
-  MatRadioModule,
-  MatRippleModule,
-  MatSelectModule,
-  MatSidenavModule,
-  MatSliderModule,
-  MatSlideToggleModule,
-  MatSnackBarModule,
-  MatStepperModule,
-  MatTableModule,
-  MatTabsModule,
-  MatToolbarModule,
-  MatTooltipModule
-} from '@angular/material';
-
+import { AuthLayoutComponent } from './layout/auth-layout/auth-layout.component';
+import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
+import {MaterialModule} from './layout/material/material.module';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AuthLayoutComponent,
+    AdminLayoutComponent  
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatAutocompleteModule,
-    MatButtonModule,
-    MatButtonToggleModule,
-    MatCardModule,
-    MatCheckboxModule,
-    MatChipsModule,
-    MatDatepickerModule,
-    MatDialogModule,
-    MatExpansionModule,
-    MatGridListModule,
-    MatIconModule,
-    MatInputModule,
-    MatListModule,
-    MatMenuModule,
-    MatNativeDateModule,
-    MatProgressBarModule,
-    MatProgressSpinnerModule,
-    MatRadioModule,
-    MatRippleModule,
-    MatSelectModule,
-    MatSidenavModule,
-    MatSliderModule,
-    MatSlideToggleModule,
-    MatSnackBarModule,
-    MatStepperModule,
-    MatTableModule,
-    MatTabsModule,
-    MatToolbarModule,
-    MatTooltipModule,
-    FlexLayoutModule
+    RouterModule,
+    AppRoutingModule,
+    FlexLayoutModule,
+    MaterialModule  
   ],
   providers: [],
   bootstrap: [AppComponent]
