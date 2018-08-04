@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
 import { AuthRoutingModule } from './auth-routing.module';
-import {MaterialModule} from '../../layout/material/material.module';
+import {MaterialModule} from '../../commonModule/material/material.module';
 @NgModule({
   imports: [
     CommonModule,

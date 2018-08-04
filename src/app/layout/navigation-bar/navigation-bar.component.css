@@ -1,0 +1,11 @@
+.icon-font {
+    font-size: 35px;
+}
+
+mat-icon{
+    cursor: pointer;
+}
+
+.navigation-bar {
+    background-color: lightgrey
+}

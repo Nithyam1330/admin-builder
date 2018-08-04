@@ -4,7 +4,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 
 import { LoginRoutingModule } from './login-routing.module';
 import {LoginComponent} from './login.component';
-import {MaterialModule} from '../../../layout/material/material.module';
+import {MaterialModule} from '../../../commonModule/material/material.module';
 @NgModule({
   imports: [
     CommonModule,

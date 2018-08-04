@@ -9,12 +9,14 @@ import {RouterModule} from '@angular/router';
 
 import { AuthLayoutComponent } from './layout/auth-layout/auth-layout.component';
 import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
-import {MaterialModule} from './layout/material/material.module';
+import {MaterialModule} from './commonModule/material/material.module';
+import { NavigationBarComponent } from './layout/navigation-bar/navigation-bar.component';
 @NgModule({
   declarations: [
     AppComponent,
     AuthLayoutComponent,
-    AdminLayoutComponent  
+    AdminLayoutComponent,
+    NavigationBarComponent  
   ],
   imports: [
     BrowserModule,

@@ -32,3 +32,11 @@ npm install @angular/flex-layout@latest --save
 import { FlexLayoutModule } from ‘@angular/flex-layout’;
 
 imports: [ ..., FlexLayoutModule ], 
+
+
+#Npm install for ICONS
+
+1. npm install material-design-icons
+2. Copy the following path in angular.cli styles Array i.e.. 
+"./node_modules/material-design-icons/iconfont/material-icons.css"
+
