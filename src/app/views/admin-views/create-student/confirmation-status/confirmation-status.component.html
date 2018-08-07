@@ -1,3 +1,32 @@
-<p>
-  confirmation-status works!
-</p>
+<div fxFlexLayout="row" fxLayout.lt-md='column'>
+  <div fxFlex="5%"></div>
+  <div fxFlex="40%">
+    <mat-form-field class="full_width">
+      <input matInput placeholder="Amount" type="number" required>
+    </mat-form-field>
+
+  </div>
+  <div fxFlex="10%"></div>
+  <div fxFlex="40%">
+    <mat-form-field class="full_width">
+      <mat-select placeholder="Status" required>
+        <mat-option value="0">Pending</mat-option>
+        <mat-option value="1">Joined</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+
+<div fxFlexLayout="row" fxLayout.lt-md='column'>
+  <div fxFlex="5%"></div>
+  <div fxFlex="40%">
+    <mat-form-field class="full_width">
+      <input matInput [matDatepicker]="datePicker" placeholder="Date Of Joining / enquiry">
+      <mat-datepicker-toggle matSuffix [for]="datePicker"></mat-datepicker-toggle>
+      <mat-datepicker touchUi #datePicker></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div fxFlex="10%"></div>
+  <div fxFlex="40%">
+  </div>
+</div>
