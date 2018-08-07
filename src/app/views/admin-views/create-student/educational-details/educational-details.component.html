@@ -1,3 +1,80 @@
-<p>
-  educational-details works!
-</p>
+<div fxFlexLayout="row" fxLayout.lt-md='column'>
+  <div fxFlex="5%"></div>
+  <div fxFlex="40%">
+    <mat-form-field class="full_width">
+      <mat-select placeholder="Qualification" required>
+        <mat-option value="schooling">Schooling</mat-option>
+        <mat-option value="intermediate">+2</mat-option>
+        <mat-option value="intermediate">UG</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div fxFlex="10%"></div>
+  <div fxFlex="40%">
+    <mat-form-field class="full_width">
+      <mat-select placeholder="Specialization" required>
+        <mat-option value="specialization">Intemediate / diploma</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  </div>
+  
+  
+  <div fxFlexLayout="row" fxLayout.lt-md='column'>
+    <div fxFlex="5%"></div>
+    <div fxFlex="40%">
+      <mat-form-field class="full_width">
+        <mat-select placeholder="Branch" required>
+          <mat-option value="std">Standard</mat-option>
+          <mat-option value="female">MPC/BIPC/MEC/CEC/OTHERS</mat-option>
+          <mat-option value="female">CSE/ECE/EEE/MECH/OTHERS</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div fxFlex="10%"></div>
+    <div fxFlex="40%">
+      <mat-form-field class="full_width">
+        <input matInput placeholder="Others" type="text" required>
+      </mat-form-field>
+    </div>
+    </div>
+    
+    <div fxFlexLayout="row" fxLayout.lt-md='column'>
+      <div fxFlex="5%"></div>
+      <div fxFlex="90%">
+        <mat-form-field  class="full_width">
+          <mat-chip-list #chipList>
+            <mat-chip *ngFor="let sub of weekSubj" [selectable]="selectable"
+                     [removable]="removable" (removed)="remove(sub)">
+              {{sub}}
+              <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+            <input placeholder="Preferred Subjects"
+                   [matChipInputFor]="chipList"
+                   [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                   [matChipInputAddOnBlur]="addOnBlur"
+                   (matChipInputTokenEnd)="add($event)">
+          </mat-chip-list>
+        </mat-form-field>
+      </div>
+      <!-- <div fxFlex="10%"></div>
+      <div fxFlex="40%">
+        <mat-form-field class="full_width">
+          <input matInput placeholder="Others" type="text" required>
+        </mat-form-field>
+      </div> -->
+      </div>
+      
+  
+  
+  <!-- 
+    <div fxFlexLayout="row" fxLayout.lt-md='column'>
+      <div fxFlex="5%"></div>
+      <div fxFlex="40%">
+      </div>
+      <div fxFlex="10%"></div>
+      <div fxFlex="40%" >
+        <div fxFlex.lg="39%"></div>
+        <button mat-raised-button color="primary" class="full_width">Next</button>
+      </div>
+      </div> -->

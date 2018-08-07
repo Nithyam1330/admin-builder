@@ -1,3 +1,44 @@
+<!-- 
+Functionality for create student:
+
+Qualification 
+
+1. Schooling
+2. +2
+3. UG
+4. PG
+
+Specialization
+
+1. Schooling -> class
+2. +2 -> Intemediate / diploma
+3. UG -> Degree/ BTECH/ OTHERS
+
+Branch
+
+1. schooling -> nothing
+2. +2 -> MPC/BIPC/MEC/CEC/OTHERS
+3. UG -> CSE/ECE/EEE/MECH/OTHERS
+
+IF OTHERS -> INPUT FIELD
+
+DISCUSSED FEE / FINALIZED FEE-> INPUT FIELD
+
+STATUS -> PENDING / JOINED -->
+
 <mat-card>
-    <app-personal-info></app-personal-info>
+    <mat-horizontal-stepper linear #stepper>
+        <mat-step editable="true">
+            <ng-template matStepLabel>Personal Information</ng-template>
+            <app-personal-info></app-personal-info>
+        </mat-step>
+        <mat-step editable="false">
+            <ng-template matStepLabel>Educational Information</ng-template>
+            <app-educational-details></app-educational-details>
+        </mat-step>
+        <mat-step editable="true">
+            <ng-template matStepLabel>Confirmation Information</ng-template>
+            <app-confirmation-status></app-confirmation-status>
+        </mat-step>
+    </mat-horizontal-stepper>
 </mat-card>
