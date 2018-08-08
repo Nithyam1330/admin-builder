@@ -6,7 +6,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppRoutingModule } from './app-routing.module';
 import {RouterModule} from '@angular/router';
-
 import { AuthLayoutComponent } from './layout/auth-layout/auth-layout.component';
 import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
 import {MaterialModule} from './commonModule/material/material.module';

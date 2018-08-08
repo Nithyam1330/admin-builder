@@ -31,8 +31,7 @@ npm install @angular/flex-layout@latest --save
 2. Import following in app module 
 import { FlexLayoutModule } from ‘@angular/flex-layout’;
 
-imports: [ ..., FlexLayoutModule ], 
-
+imports: [ ..., FlexLayoutModule ]
 
 #Npm install for ICONS
 
@@ -40,3 +39,9 @@ imports: [ ..., FlexLayoutModule ],
 2. Copy the following path in angular.cli styles Array i.e.. 
 "./node_modules/material-design-icons/iconfont/material-icons.css"
 
+#Installation for Pie chart Graphic Representation
+
+1. npm install chart.js –save
+2. npm install ng2-charts --save
+3. In Angular.cli script section paste the following path 
+    ["./node_modules/chart.js/dist/Chart.min.js"]
