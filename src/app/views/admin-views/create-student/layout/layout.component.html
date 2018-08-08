@@ -25,9 +25,8 @@ IF OTHERS -> INPUT FIELD
 DISCUSSED FEE / FINALIZED FEE-> INPUT FIELD
 
 STATUS -> PENDING / JOINED -->
-
 <mat-card>
-    <mat-horizontal-stepper linear #stepper>
+    <mat-vertical-stepper linear #stepper>
         <mat-step editable="true">
             <ng-template matStepLabel>Personal Information</ng-template>
             <app-personal-info></app-personal-info>
@@ -40,5 +39,5 @@ STATUS -> PENDING / JOINED -->
             <ng-template matStepLabel>Confirmation Information</ng-template>
             <app-confirmation-status></app-confirmation-status>
         </mat-step>
-    </mat-horizontal-stepper>
+    </mat-vertical-stepper>
 </mat-card>

@@ -11,6 +11,10 @@ const routes: Routes = [
       {
         path: 'create-student',
         loadChildren: './create-student/create-student.module#CreateStudentModule'
+      },
+      {
+        path: 'fee-structure',
+        loadChildren: './fee-structure/fee-structure.module#FeeStructureModule'
       }
     ]
   }
