@@ -6,14 +6,15 @@
         <mat-card ngClass.sm="card_height_lg">
             <div class="example-container">
                 <mat-form-field>
-                    <input matInput placeholder="Username">
+                    <input matInput placeholder="Username" name="username" [(ngModel)]="loginObj.username" #username="ngModel">
                 </mat-form-field>
                 <mat-form-field>
-                    <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'">
-                    <!-- <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon> -->
+                    <input matInput placeholder="Password" name="password" [(ngModel)]="loginObj.password" #password="ngModel" [type]="hide ? 'password' : 'text'">
+                    <mat-icon class="pointer" matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </mat-form-field>
-                <button mat-raised-button color="primary" class="button_border ">Login</button>
+                <button mat-raised-button color="primary" class="button_border" (click)="login()">Login</button>
             </div>
+                <mat-error *ngIf="isError">Please enter valid username and password</mat-error>
         </mat-card>
     </div>
 </div>

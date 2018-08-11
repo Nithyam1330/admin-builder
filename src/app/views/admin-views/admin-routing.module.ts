@@ -15,6 +15,10 @@ const routes: Routes = [
       {
         path: 'fee-structure',
         loadChildren: './fee-structure/fee-structure.module#FeeStructureModule'
+      },
+      {
+        path: 'students-list',
+        loadChildren: './students-list/students-list.module#StudentsListModule'
       }
     ]
   }
