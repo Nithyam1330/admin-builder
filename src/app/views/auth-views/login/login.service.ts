@@ -3,6 +3,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Router } from '@angular/router';
 import { Subject, Observable } from 'rxjs';
+import {AppLoaderService} from '../../../commonModule/app-loader/app-loader.service';
 @Injectable({
   providedIn: 'root'
 })
@@ -10,7 +11,8 @@ export class LoginService {
   studentDataArray: any[];
   isError = new Subject<boolean>();
   constructor(private db: AngularFireDatabase, private afAuth: AngularFireAuth,
-    private router: Router) { }
+    private router: Router,
+    private appLoaderService: AppLoaderService) { }
 
   // Signup a new user
   setLoginData(data) {
@@ -36,6 +38,7 @@ export class LoginService {
         for (let i = 0; i < this.studentDataArray.length; i++) {
           if (this.studentDataArray[i].username === userData.username && this.studentDataArray[i].password === userData.password) {
             this.router.navigate(['admin', 'dashboard']);
+            this.appLoaderService.close();
             break;
           } else {
             this.isError.next(true);

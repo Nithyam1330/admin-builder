@@ -16,6 +16,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 // Custom modules
 import {MaterialModule} from './commonModule/material/material.module';
+import {AppLoaderComponent} from './commonModule/app-loader/app-loader.component';
+import {AppLoaderService} from './commonModule/app-loader/app-loader.service';
 
 // Custom Components
 import { AuthLayoutComponent } from './layout/auth-layout/auth-layout.component';
@@ -38,7 +40,8 @@ var config = {
     AppComponent,
     AuthLayoutComponent,
     AdminLayoutComponent,
-    NavigationBarComponent  
+    NavigationBarComponent,
+    AppLoaderComponent  
   ],
   imports: [
     BrowserModule,
@@ -51,7 +54,8 @@ var config = {
 	  AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [AppLoaderService],
+  bootstrap: [AppComponent],
+  entryComponents: [AppLoaderComponent]
 })
 export class AppModule { }
