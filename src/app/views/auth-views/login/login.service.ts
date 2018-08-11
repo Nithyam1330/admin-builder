@@ -4,6 +4,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { Router } from '@angular/router';
 import { Subject, Observable } from 'rxjs';
 import {AppLoaderService} from '../../../commonModule/app-loader/app-loader.service';
+import {AuthService} from '../../../services/auth.service';
 @Injectable({
   providedIn: 'root'
 })
@@ -12,7 +13,8 @@ export class LoginService {
   isError = new Subject<boolean>();
   constructor(private db: AngularFireDatabase, private afAuth: AngularFireAuth,
     private router: Router,
-    private appLoaderService: AppLoaderService) { }
+    private appLoaderService: AppLoaderService,
+    private authService: AuthService) { }
 
   // Signup a new user
   setLoginData(data) {
@@ -37,6 +39,7 @@ export class LoginService {
       if (this.studentDataArray.length > 0) {
         for (let i = 0; i < this.studentDataArray.length; i++) {
           if (this.studentDataArray[i].username === userData.username && this.studentDataArray[i].password === userData.password) {
+            this.authService.isAuthenticated = true;
             this.router.navigate(['admin', 'dashboard']);
             this.appLoaderService.close();
             break;

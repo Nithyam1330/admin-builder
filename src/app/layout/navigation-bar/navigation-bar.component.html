@@ -2,21 +2,39 @@
   <div fxFlex.gt-sm="20%"></div>
   <div fxFlex.gt-sm="60%" fxFlex="100%">
     <mat-card class="navigation-bar">
+
       <div fxFlex="20%" align="center">
-        <mat-icon class="icon-font">dashboard</mat-icon>
+        <a routerLink="/admin/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          <mat-icon class="icon-font">dashboard</mat-icon>
+        </a>
       </div>
+
+
       <div fxFlex="20%" align="center">
-        <mat-icon class="icon-font">person_add</mat-icon>
+        <a routerLink="/admin/create-student" routerLinkActive="active">
+          <mat-icon class="icon-font" >person_add</mat-icon>
+        </a>
       </div>
+
       <div fxFlex="20%" align="center">
+          <a routerLink="/admin/students-list" routerLinkActive="active">
         <mat-icon class="icon-font">people</mat-icon>
+        </a>
       </div>
+
       <div fxFlex="20%" align="center">
+          <a routerLink="/admin/fee-structure" routerLinkActive="active">
         <mat-icon class="icon-font">insert_chart</mat-icon>
+          </a>
       </div>
-      <div fxFlex="20%" align="center">
-        <mat-icon class="icon-font">account_circle</mat-icon>
-      </div>
+
+      <a>
+        <div fxFlex="20%" align="center">
+            <a>
+          <mat-icon class="icon-font">account_circle</mat-icon>
+          </a>
+        </div>
+      </a>
     </mat-card>
   </div>
 </div>

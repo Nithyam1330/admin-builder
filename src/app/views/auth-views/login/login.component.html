@@ -1,20 +1,31 @@
 <div fxLayout="row wrap">
-    <div fxFlex.gt-sm="70%" fxHide.sm fxHide.xs>
-        <img src='../../../../assets/login.jpg' height="100%" width="100%" />
-    </div>
-    <div fxFlex.gt-sm="30%" fxFlex.ls-md='100%' fxLayout="column" fxLayoutAlign.gt-xs="center" style="background-color: honeydew">
-        <mat-card ngClass.sm="card_height_lg">
-            <div class="example-container">
-                <mat-form-field>
-                    <input matInput placeholder="Username" name="username" [(ngModel)]="loginObj.username" #username="ngModel">
-                </mat-form-field>
-                <mat-form-field>
-                    <input matInput placeholder="Password" name="password" [(ngModel)]="loginObj.password" #password="ngModel" [type]="hide ? 'password' : 'text'">
-                    <mat-icon class="pointer" matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                </mat-form-field>
-                <button mat-raised-button color="primary" class="button_border" (click)="login()">Login</button>
-            </div>
+        <div fxFlex.gt-sm="70%" fxHide.sm fxHide.xs>
+            <img src='../../../../assets/login.jpg' height="100%" width="100%" />
+        </div>  
+        <div fxFlex.gt-sm="30%" fxFlex.ls-md='100%' fxLayout="column" fxLayoutAlign.gt-xs="center" style="background-color: honeydew">
+            <mat-card ngClass.sm="card_height_lg">
+                <form  (ngSubmit)="login()">
+                    <div class="example-container">
+                        <mat-form-field>
+                            <input matInput placeholder="Username" name="username" [formControl]="loginValidators.usernameFormControl" [errorStateMatcher]="matcher">
+                            <mat-error *ngIf="loginValidators.usernameFormControl.hasError('required')">
+                                Email is
+                                <strong>required</strong>
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput placeholder="Password" name="password" [formControl]="loginValidators.passwordFormControl" [errorStateMatcher]="matcher" 
+                                    [type]="hide ? 'password' : 'text'">
+                            <mat-icon class="pointer" matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            <mat-error *ngIf="loginValidators.passwordFormControl.hasError('required')">
+                                    Password is
+                                    <strong>required</strong>
+                            </mat-error>
+                        </mat-form-field>
+                        <button mat-raised-button color="primary" class="button_border" >Login</button>
+                    </div>
+                </form>
                 <mat-error *ngIf="isError">Please enter valid username and password</mat-error>
-        </mat-card>
+            </mat-card>
+        </div>
     </div>
-</div>

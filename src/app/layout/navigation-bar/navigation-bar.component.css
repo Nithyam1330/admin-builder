@@ -9,3 +9,7 @@ mat-icon{
 .navigation-bar {
     background-color: lightgrey
 }
+
+.active {
+    color:grey;
+}
