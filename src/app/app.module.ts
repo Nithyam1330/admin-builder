@@ -24,6 +24,7 @@ import { AuthLayoutComponent } from './layout/auth-layout/auth-layout.component'
 import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
 import { NavigationBarComponent } from './layout/navigation-bar/navigation-bar.component';
 
+
 // Firebase configuration variable 
 
 var config = {
@@ -41,7 +42,7 @@ var config = {
     AuthLayoutComponent,
     AdminLayoutComponent,
     NavigationBarComponent,
-    AppLoaderComponent  
+    AppLoaderComponent
   ],
   imports: [
     BrowserModule,

@@ -1,60 +1,68 @@
-<div fxFlexLayout="row" fxLayout.lt-md='column'>
-<div fxFlex="5%"></div>
-<div fxFlex="40%">
-    <mat-form-field class="full_width">
-      <input matInput placeholder="Student Name" type="text" required>
-    </mat-form-field>
-</div>
-<div fxFlex="10%"></div>
-<div fxFlex="40%">
-  <mat-form-field class="full_width">
-    <input matInput placeholder="Father Name" type="text" required>
-  </mat-form-field>
-</div>
-</div>
-
-
-<div fxFlexLayout="row" fxLayout.lt-md='column'>
-  <div fxFlex="5%"></div>
-  <div fxFlex="40%">
-    <mat-form-field class="full_width">
-      <mat-select placeholder="Gender" required>
-        <mat-option value="male">Male</mat-option>
-        <mat-option value="female">Female</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
-  <div fxFlex="10%"></div>
-  <div fxFlex="40%">
-    <mat-form-field class="full_width">
-      <input matInput placeholder="Email" type="email" required>
-    </mat-form-field>
-  </div>
-  </div>
-
-<div fxFlexLayout="row" fxLayout.lt-md='column'>
-  <div fxFlex="5%"></div>
-  <div fxFlex="40%">
+<form #myForm="ngForm" (ngSubmit)="submitPersonalInfo(myForm)" novalidate>
+  <div fxFlexLayout="row" fxLayout.lt-md='column'>
+    <div fxFlex="5%"></div>
+    <div fxFlex="40%">
       <mat-form-field class="full_width">
-        <input matInput placeholder="Phone Number" type="tel" required>
+        <input matInput placeholder="Student Name" type="text" required name="studentName" #studentName='ngModel' [(ngModel)]="personalInfoObj.studentName">
       </mat-form-field>
+      <app-show-error [control]="studentName"></app-show-error>
+    </div>
+    <div fxFlex="10%"></div>
+    <div fxFlex="40%">
+      <mat-form-field class="full_width">
+        <input matInput placeholder="Father Name" type="text" required name="fatherName" #fatherName="ngModel" [(ngModel)]="personalInfoObj.fatherName">
+      </mat-form-field>
+      <app-show-error [control]="fatherName"></app-show-error>
+    </div>
   </div>
-  <div fxFlex="10%"></div>
-  <div fxFlex="40%">
-    <mat-form-field class="full_width">
-      <input matInput placeholder="Alternate Number" type="tel" required>
-    </mat-form-field>
-  </div>
+  <div fxFlexLayout="row" fxLayout.lt-md='column'>
+    <div fxFlex="5%"></div>
+    <div fxFlex="40%">
+      <mat-form-field class="full_width">
+        <mat-select placeholder="Gender" [(value)]="personalInfoObj.gender" required name="gender" #gender="ngModel" [(ngModel)]="personalInfoObj.gender">
+          <mat-option value="0">Male</mat-option>
+          <mat-option value="1">Female</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <app-show-error [control]="gender"></app-show-error>
+    </div>
+    <div fxFlex="10%"></div>
+    <div fxFlex="40%">
+      <mat-form-field class="full_width">
+        <input matInput placeholder="Email" type="email" required name="email" #email="ngModel" emailValidator [(ngModel)]="personalInfoObj.email">
+      </mat-form-field>
+      <app-show-error [control]="email"></app-show-error>
+    </div>
   </div>
 
-<!-- 
+  <div fxFlexLayout="row" fxLayout.lt-md='column'>
+    <div fxFlex="5%"></div>
+    <div fxFlex="40%">
+      <mat-form-field class="full_width">
+        <input matInput placeholder="Phone Number" type="tel" required name="phoneNumber" #phoneNumber="ngModel" telephoneNumber
+          [(ngModel)]="personalInfoObj.phoneNumber">
+      </mat-form-field>
+      <app-show-error [control]="phoneNumber"></app-show-error>
+    </div>
+    <div fxFlex="10%"></div>
+    <div fxFlex="40%">
+      <mat-form-field class="full_width">
+        <input matInput placeholder="Alternate Number" type="tel" required name="altNumber" #altNumber="ngModel" telephoneNumber
+          [(ngModel)]="personalInfoObj.altNumber">
+      </mat-form-field>
+      <app-show-error [control]="altNumber"></app-show-error>
+    </div>
+  </div>
+
   <div fxFlexLayout="row" fxLayout.lt-md='column'>
     <div fxFlex="5%"></div>
     <div fxFlex="40%">
     </div>
     <div fxFlex="10%"></div>
-    <div fxFlex="40%" >
+    <div fxFlex="40%">
       <div fxFlex.lg="39%"></div>
-      <button mat-raised-button color="primary" class="full_width">Next</button>
+      <button mat-raised-button matStepperNext (click)="submitPersonalInfo(myForm)" [disabled]="myForm.invalid" color="primary"
+        class="full_width">Next</button>
     </div>
-    </div> -->
+  </div>
+</form>

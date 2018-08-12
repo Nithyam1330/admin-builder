@@ -1,19 +1,21 @@
+<form #confirmForm="ngForm">
 <div fxFlexLayout="row" fxLayout.lt-md='column'>
   <div fxFlex="5%"></div>
   <div fxFlex="40%">
     <mat-form-field class="full_width">
-      <input matInput placeholder="Amount" type="number" required>
+      <input matInput placeholder="Amount" type="number" required name="amount" #amount="ngModel" [(ngModel)]="confirmInfoObj.amount">
     </mat-form-field>
-
+    <app-show-error [control]="amount"></app-show-error>
   </div>
   <div fxFlex="10%"></div>
   <div fxFlex="40%">
     <mat-form-field class="full_width">
-      <mat-select placeholder="Status" required>
+      <mat-select placeholder="Status" required name="status" #status="ngModel" [(ngModel)]="confirmInfoObj.status">
         <mat-option value="0">Pending</mat-option>
         <mat-option value="1">Joined</mat-option>
       </mat-select>
     </mat-form-field>
+    <app-show-error [control]="status"></app-show-error>
   </div>
 </div>
 
@@ -21,12 +23,27 @@
   <div fxFlex="5%"></div>
   <div fxFlex="40%">
     <mat-form-field class="full_width">
-      <input matInput [matDatepicker]="datePicker" placeholder="Date Of Joining / enquiry">
+      <input matInput [matDatepicker]="datePicker" placeholder="Date Of Joining / enquiry" name="date" #date="ngModel" required [(ngModel)]="confirmInfoObj.date">
       <mat-datepicker-toggle matSuffix [for]="datePicker"></mat-datepicker-toggle>
       <mat-datepicker touchUi #datePicker></mat-datepicker>
     </mat-form-field>
+    <app-show-error [control]="date"></app-show-error>
   </div>
   <div fxFlex="10%"></div>
   <div fxFlex="40%">
   </div>
 </div>
+
+<div fxFlexLayout="row" fxLayout.lt-md='column'>
+  <div fxFlex="5%"></div>
+  <div fxFlex="40%">
+  </div>
+  <div fxFlex="10%"></div>
+  <div fxFlex="40%">
+    <div fxFlex.lg="38%"></div>
+    <button mat-raised-button color="primary" matStepperPrevious class="full_width">Previous</button>
+    <div fxFlex.lg="1%"></div>
+    <button mat-raised-button color="primary" class="full_width" [disabled]="confirmForm.invalid" (click)="confirmFormSubmit(confirmForm)">Save</button>
+  </div>
+</div>
+</form>
