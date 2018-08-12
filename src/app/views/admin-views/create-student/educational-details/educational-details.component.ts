@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {MatChipInputEvent} from '@angular/material';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
+import { NgForm } from '@angular/forms';
+import {EducationalInfo} from './educational-details.model';
 
 @Component({
   selector: 'app-educational-details',
@@ -8,15 +10,19 @@ import {COMMA, ENTER} from '@angular/cdk/keycodes';
   styleUrls: ['./educational-details.component.css']
 })
 export class EducationalDetailsComponent implements OnInit {
+  educationalInfoObj: EducationalInfo;
   visible = true;
   selectable = true;
   removable = true;
   addOnBlur = true;
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
   weekSubj: any[] = [];
+  @Output()
+  educationalInfoValidEvent: EventEmitter<any> = new EventEmitter<any>();
   constructor() { }
 
   ngOnInit() {
+    this.educationalInfoObj = new EducationalInfo();
   }
 
   add(event: MatChipInputEvent): void {
@@ -41,5 +47,8 @@ export class EducationalDetailsComponent implements OnInit {
     }
   }
  
+  educationalFormValidate(f: NgForm) {
+    this.educationalInfoValidEvent.emit(f);
+  }
 
 }

@@ -26,18 +26,18 @@ DISCUSSED FEE / FINALIZED FEE-> INPUT FIELD
 
 STATUS -> PENDING / JOINED -->
 <mat-card>
-    <mat-vertical-stepper linear #stepper>
-        <mat-step editable="true">
+    <mat-vertical-stepper [linear]="isLinear" #stepper>
+        <mat-step [completed]="completedStepper.isPersonalInfoComplete">
             <ng-template matStepLabel>Personal Information</ng-template>
-            <app-personal-info></app-personal-info>
+            <app-personal-info #personalInfoChild (personalInfoValidEvent)="personalInfoValidate($event)"></app-personal-info>
         </mat-step>
-        <mat-step editable="false">
+        <mat-step [completed]="completedStepper.isEducationInfoComplete">
             <ng-template matStepLabel>Educational Information</ng-template>
-            <app-educational-details></app-educational-details>
+            <app-educational-details #educationalInfoChild (educationalInfoValidEvent)="educationInfoValidate($event)"></app-educational-details>
         </mat-step>
-        <mat-step editable="true">
+        <mat-step [completed]="completedStepper.isConfirmInfoComplete">
             <ng-template matStepLabel>Confirmation Information</ng-template>
-            <app-confirmation-status></app-confirmation-status>
+            <app-confirmation-status #confirmInfoChild (confirmValidateEvent)="confirmInfoValidate($event)"></app-confirmation-status>
         </mat-step>
     </mat-vertical-stepper>
 </mat-card>
