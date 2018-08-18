@@ -4,5 +4,5 @@ export class PersonalInfo {
     gender: string;
     email: string;
     phoneNumber: number;
-    alternateNumber: number;
+    altNumber: number;
 }

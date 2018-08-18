@@ -1,3 +1,46 @@
-<p>
-  students-list works!
-</p>
+<table mat-table [dataSource]="dataSource">
+ <!-- Student Name Column -->
+  <ng-container matColumnDef="studentName">
+    <mat-header-cell *matHeaderCellDef> STUDENT NAME </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.personalInfo.studentName | titlecase}} </mat-cell>
+  </ng-container>
+
+  <!-- Father Name Column -->
+  <ng-container matColumnDef="fatherName">
+    <mat-header-cell *matHeaderCellDef> FATHER NAME </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.personalInfo.fatherName | titlecase}} </mat-cell>
+  </ng-container>
+
+  <!-- Phone Number Column -->
+  <ng-container matColumnDef="phoneNumber">
+    <mat-header-cell *matHeaderCellDef> MOBILE </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.personalInfo.phoneNumber}} </mat-cell>
+  </ng-container>
+
+  <!-- Qualification Column -->
+  <ng-container matColumnDef="qualification">
+    <mat-header-cell *matHeaderCellDef> QUALIFICATION </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.educationalInfo.qualification | uppercase}} </mat-cell>
+  </ng-container>
+
+  <!-- Branch Column -->
+  <ng-container matColumnDef="branch">
+    <mat-header-cell *matHeaderCellDef> BRANCH </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.educationalInfo.branch | uppercase}} </mat-cell>
+  </ng-container>
+
+  <!-- Status Column -->
+  <ng-container matColumnDef="status">
+    <mat-header-cell *matHeaderCellDef> STATUS </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.confirmInfo.status | uppercase}} </mat-cell>
+  </ng-container>
+
+  <!-- Row -->
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;" class="pointer"></mat-row>>
+</table>
+
+<mat-paginator [length]="paginationLength"
+              [pageSize]="5"
+              [pageSizeOptions]="[5, 10, 25, 100]">
+</mat-paginator>

@@ -2,7 +2,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MaterialModule} from '../../../commonModule/material/material.module';
-import {FlexModule} from '@angular/flex-layout';
+import {FlexLayoutModule} from '@angular/flex-layout';
 import {FormsModule} from '@angular/forms';
 // Custom Routing
 import { CreateStudentRoutingModule } from './create-student-routing.module';
@@ -21,12 +21,13 @@ import {EmailValidatorDirective} from '../../../directives/email-validator.direc
 
 // Custom Services
 import {LayoutService} from './layout/layout.service';
+import { PreviewStudentComponent } from './preview-student/preview-student.component';
 @NgModule({
   imports: [
     CommonModule,
     CreateStudentRoutingModule,
     MaterialModule,
-    FlexModule,
+    FlexLayoutModule,
     FormsModule
   ],
   declarations: [
@@ -37,10 +38,12 @@ import {LayoutService} from './layout/layout.service';
     ConfirmationStatusComponent,
     ShowErrorComponent,
     PhoneNumberValidatorDirective,
-    EmailValidatorDirective
+    EmailValidatorDirective,
+    PreviewStudentComponent
   ],
   providers: [
     LayoutService
-  ]
+  ],
+  entryComponents: [PreviewStudentComponent]
 })
 export class CreateStudentModule { }

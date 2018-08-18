@@ -10,6 +10,7 @@ import { LayoutService } from './layout.service';
 
 // Custom Component 
 import { AlertDialogComponent } from '../../alert-dialog/alert-dialog.component';
+import {PreviewStudentComponent} from '../preview-student/preview-student.component';
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
@@ -60,10 +61,10 @@ export class LayoutComponent implements OnInit {
           message: 'User Already Exist Please Try some other'
         }
       })
+    }
   }
-}
 
-ngOnInit() {
-  this.layoutService.getStudentData();
-}
+  ngOnInit() {
+    this.layoutService.getStudentData();
+  }
 }
