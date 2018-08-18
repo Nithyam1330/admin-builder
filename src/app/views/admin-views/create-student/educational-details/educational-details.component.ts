@@ -41,8 +41,8 @@ export class EducationalDetailsComponent implements OnInit {
   branchOptionsData = {
     schoolOptions: [
       {
-        key: 'nursury',
-        displayValue: 'Nursury'
+        key: 'nursery',
+        displayValue: 'Nursery'
       },
       {
         key: 'lkg',
@@ -121,24 +121,28 @@ export class EducationalDetailsComponent implements OnInit {
     ],
     diplomaOptions: [
       {
-        key: 'mpc-diploma',
-        displayValue: 'MPC-diploma'
+        key: 'cse-diploma',
+        displayValue: 'CSE-Diploma'
       },
       {
-        key: 'bipc-diploma',
-        displayValue: 'BIPC-diploma'
+        key: 'ece-diploma',
+        displayValue: 'ECE-Diploma'
       },
       {
-        key: 'mec-diploma',
-        displayValue: 'MEC-diploma'
+        key: 'mech-diploma',
+        displayValue: 'MECH-Diploma'
       },
       {
-        key: 'cec-diploma',
-        displayValue: 'CEC-diploma'
+        key: 'eee-diploma',
+        displayValue: 'EEE-Diploma'
+      },
+      {
+        key: 'it-diploma',
+        displayValue: 'IT-Diploma'
       },
       {
         key: 'others-diploma',
-        displayValue: 'others-diploma'
+        displayValue: 'Others-Diploma'
       }
     ],
     ugOptions: [
@@ -209,7 +213,7 @@ export class EducationalDetailsComponent implements OnInit {
       this.branchOptions = this.branchOptionsData.schoolOptions;
     } else if(this.educationalInfoObj.qualification === 'intermediate'){
       this.branchOptions = this.branchOptionsData.intermediateOptions;
-    } else if(this.educationalInfoObj.specialization === 'diploma') {
+    } else if(this.educationalInfoObj.qualification === 'diploma') {
       this.branchOptions = this.branchOptionsData.diplomaOptions;
     } else if(this.educationalInfoObj.qualification === 'ug') {
       this.branchOptions = this.branchOptionsData.ugOptions;

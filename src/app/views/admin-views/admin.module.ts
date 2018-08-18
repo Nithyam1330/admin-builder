@@ -1,7 +1,7 @@
 // Predefined
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {FlexModule} from '@angular/flex-layout';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 // Custom Module
 import {MaterialModule} from '../../commonModule/material/material.module';
@@ -15,7 +15,7 @@ import { AlertDialogComponent } from './alert-dialog/alert-dialog.component';
     CommonModule,
     AdminRoutingModule,
     MaterialModule,
-    FlexModule
+    FlexLayoutModule
   ],
   declarations: [AlertDialogComponent],
   entryComponents: [AlertDialogComponent]

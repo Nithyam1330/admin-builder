@@ -1,0 +1,19 @@
+<mat-list>
+  <mat-list-item>Student Name - {{dataObtained.personalInfo.studentName}}</mat-list-item>
+  <mat-list-item>Father Name - {{dataObtained.personalInfo.fatherName}}</mat-list-item>
+  <mat-list-item>Gender - {{dataObtained.personalInfo.gender === 0 ? 'Male' : 'Female'}}</mat-list-item>
+  <mat-list-item>Email - {{dataObtained.personalInfo.email}}</mat-list-item>
+  <mat-list-item>Mobile Number - {{dataObtained.personalInfo.phoneNumber}}</mat-list-item>
+  <mat-list-item>AlternateNumber - {{dataObtained.personalInfo.altNumber}}</mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item>Qualification - {{dataObtained.educationalInfo.qualification}}</mat-list-item>
+  <mat-list-item>Branch - {{dataObtained.educationalInfo.branch}}</mat-list-item>
+  <mat-list-item>Subjects - {{dataObtained.educationalInfo.preferredSubject}}</mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item>Amount - {{dataObtained.confirmInfo.amount}}</mat-list-item>
+  <mat-list-item>Status - {{dataObtained.confirmInfo.status}}</mat-list-item>
+  <mat-list-item>Date - {{dataObtained.confirmInfo.date}}</mat-list-item>
+</mat-list>
+
+<button mat-raised-button mat-dialog-close="false" color="warn">Cancel</button>
+<button mat-raised-button mat-dialog-close="true" color="primary">Save and Continue</button>
