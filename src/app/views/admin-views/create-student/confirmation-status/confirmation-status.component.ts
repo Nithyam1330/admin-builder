@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import {ConfirmationInfo} from './confirmation-status.model';
 
@@ -9,6 +9,7 @@ import {ConfirmationInfo} from './confirmation-status.model';
 })
 export class ConfirmationStatusComponent implements OnInit {
   confirmInfoObj: ConfirmationInfo;
+  pendingOrJoinedDate : any;
   @Output()
   confirmValidateEvent: EventEmitter<any> = new EventEmitter<any>();
   constructor() { }
@@ -18,6 +19,7 @@ export class ConfirmationStatusComponent implements OnInit {
   }
 
   confirmFormSubmit(f: NgForm) {
+     this.confirmInfoObj.date = this.pendingOrJoinedDate.toDateString()
     this.confirmValidateEvent.emit(f);
   }
 }

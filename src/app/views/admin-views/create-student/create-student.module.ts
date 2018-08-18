@@ -18,6 +18,9 @@ import {ShowErrorComponent} from '../../../commonModule/show-error/show-error.co
 // Custom Derectives
 import { PhoneNumberValidatorDirective } from '../../../directives/phone-number-validator.directive';
 import {EmailValidatorDirective} from '../../../directives/email-validator.directive';
+
+// Custom Services
+import {LayoutService} from './layout/layout.service';
 @NgModule({
   imports: [
     CommonModule,
@@ -35,6 +38,9 @@ import {EmailValidatorDirective} from '../../../directives/email-validator.direc
     ShowErrorComponent,
     PhoneNumberValidatorDirective,
     EmailValidatorDirective
+  ],
+  providers: [
+    LayoutService
   ]
 })
 export class CreateStudentModule { }

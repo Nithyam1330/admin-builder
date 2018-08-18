@@ -11,8 +11,8 @@
   <div fxFlex="40%">
     <mat-form-field class="full_width">
       <mat-select placeholder="Status" required name="status" #status="ngModel" [(ngModel)]="confirmInfoObj.status">
-        <mat-option value="0">Pending</mat-option>
-        <mat-option value="1">Joined</mat-option>
+        <mat-option value="pending">Pending</mat-option>
+        <mat-option value="joined">Joined</mat-option>
       </mat-select>
     </mat-form-field>
     <app-show-error [control]="status"></app-show-error>
@@ -23,7 +23,7 @@
   <div fxFlex="5%"></div>
   <div fxFlex="40%">
     <mat-form-field class="full_width">
-      <input matInput [matDatepicker]="datePicker" placeholder="Date Of Joining / enquiry" name="date" #date="ngModel" required [(ngModel)]="confirmInfoObj.date">
+      <input matInput [matDatepicker]="datePicker" placeholder="Date Of Joining / enquiry" name="date" #date="ngModel" required [(ngModel)]="pendingOrJoinedDate" readonly>
       <mat-datepicker-toggle matSuffix [for]="datePicker"></mat-datepicker-toggle>
       <mat-datepicker touchUi #datePicker></mat-datepicker>
     </mat-form-field>

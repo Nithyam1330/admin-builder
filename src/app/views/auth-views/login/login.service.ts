@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Subject, Observable } from 'rxjs';
 import {AppLoaderService} from '../../../commonModule/app-loader/app-loader.service';
 import {AuthService} from '../../../services/auth.service';
+import {URLS} from '../../../commonModule/firebase-URLS/urls.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -18,13 +19,13 @@ export class LoginService {
 
   // Signup a new user
   setLoginData(data) {
-    let url = '/loginData/';
+    let url = URLS.setLogin;
     this.db.list(url).push(data);
   }
 
   // Get all the users Information
   getLoginData(userData) {
-    let url = '/loginData/';
+    let url = URLS.getLogin;
     let studentData = [];
     let data = this.db.list(url).snapshotChanges().subscribe(res => {
       for (let i = 0; i < res.length; i++) {
