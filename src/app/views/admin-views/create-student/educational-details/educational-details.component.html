@@ -3,40 +3,42 @@
     <div fxFlex="5%"></div>
     <div fxFlex="40%">
       <mat-form-field class="full_width">
-        <mat-select placeholder="Qualification" required name="qualification" #qualification="ngModel" [(ngModel)]="educationalInfoObj.qualification">
-          <mat-option value="schooling">Schooling</mat-option>
-          <mat-option value="intermediate">+2</mat-option>
-          <mat-option value="intermediate">UG</mat-option>
+        <mat-select placeholder="Qualification" required name="qualification" #qualification="ngModel" [(ngModel)]="educationalInfoObj.qualification" 
+          (ngModelChange)="qualificationChange()">
+          <ng-container *ngFor="let q of qualificationOptions">
+          <mat-option [value]="q.key">{{q.displayValue}}</mat-option>
+          </ng-container>
         </mat-select>
       </mat-form-field>
       <app-show-error [control]="qualification"></app-show-error>
     </div>
     <div fxFlex="10%"></div>
-    <div fxFlex="40%">
-      <mat-form-field class="full_width">
+    <div fxFlex="40%" *ngIf="educationalInfoObj.qualification === 'intermediate'">
+      <!-- <mat-form-field class="full_width">
         <mat-select placeholder="Specialization" required  name="specialization" #specialization="ngModel" [(ngModel)]="educationalInfoObj.specialization">
-          <mat-option value="specialization">Intemediate / diploma</mat-option>
+         <ng-container *ngFor="let s of specializationOptions">
+          <mat-option [value]="s.key">{{s.displayValue}}</mat-option>
+        </ng-container>
         </mat-select>
       </mat-form-field>
-      <app-show-error [control]="specialization"></app-show-error>
+      <app-show-error [control]="specialization"></app-show-error> -->
     </div>
   </div>
-
-
   <div fxFlexLayout="row" fxLayout.lt-md='column'>
     <div fxFlex="5%"></div>
     <div fxFlex="40%">
       <mat-form-field class="full_width">
-        <mat-select placeholder="Branch" required name="standard" #standard="ngModel" [(ngModel)]="educationalInfoObj.branch">
-          <mat-option value="std">Standard</mat-option>
-          <mat-option value="female">MPC/BIPC/MEC/CEC/OTHERS</mat-option>
-          <mat-option value="female">CSE/ECE/EEE/MECH/OTHERS</mat-option>
+        <mat-select placeholder="Branch" required name="standard" #standard="ngModel" [(ngModel)]="educationalInfoObj.branch"
+        (ngModelChange)="othersFieldValidation()">
+          <ng-container *ngFor="let b of branchOptions">
+          <mat-option [value]="b.key">{{b.displayValue}}</mat-option>
+        </ng-container>
         </mat-select>
       </mat-form-field>
       <app-show-error [control]="standard"></app-show-error>
     </div>
     <div fxFlex="10%"></div>
-    <div fxFlex="40%">
+    <div fxFlex="40%" *ngIf="isOthersField">
       <mat-form-field class="full_width">
         <input matInput placeholder="Others" type="text" required name="others" #others="ngModel" [(ngModel)]="educationalInfoObj.others">
       </mat-form-field>

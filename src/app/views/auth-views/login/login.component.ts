@@ -63,7 +63,6 @@ export class LoginComponent implements OnInit {
         this.isError = res;
       });
     } else {
-      console.log('not valid');
     }
   }
 }

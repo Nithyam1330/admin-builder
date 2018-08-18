@@ -3,5 +3,5 @@ export class EducationalInfo {
     specialization: string;
     branch: string;
     others: string;
-    preferredSubject: string;
+    preferredSubject: any;
 }

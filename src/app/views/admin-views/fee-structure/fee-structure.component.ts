@@ -38,7 +38,7 @@ pieChartData:any =[
   }
 
   onChartClick(event) {
-    console.log(event);
+    
 }
   ngOnInit() {
   }

@@ -15,8 +15,160 @@ export class EducationalDetailsComponent implements OnInit {
   selectable = true;
   removable = true;
   addOnBlur = true;
+  isOthersField: boolean = false;
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
   weekSubj: any[] = [];
+  branchOptions: any[] = [];
+  qualificationOptions = [
+    {
+      key: 'schooling',
+      displayValue: 'Schooling'
+    },
+    {
+      key: 'intermediate',
+      displayValue: 'Intermediate'
+    },
+    {
+      key: 'diploma',
+      displayValue: 'Diploma'
+    },
+    {
+      key: 'ug',
+      displayValue: 'Under Graduation'
+    }
+  ];
+
+  branchOptionsData = {
+    schoolOptions: [
+      {
+        key: 'nursury',
+        displayValue: 'Nursury'
+      },
+      {
+        key: 'lkg',
+        displayValue: 'LKG'
+      },
+      {
+        key: 'ukg',
+        displayValue: 'UKG'
+      },
+      {
+        key: '1st class',
+        displayValue: '1st Class'
+      },
+      {
+        key: '2nd class',
+        displayValue: '2nd Class'
+      },
+      {
+        key: '3rd class',
+        displayValue: '3rd Class'
+      },
+      {
+        key: '4th class',
+        displayValue: '4th Class'
+      },
+      {
+        key: '5th class',
+        displayValue: '5th Class'
+      },
+      {
+        key: '6th class',
+        displayValue: '6th Class'
+      },
+      {
+        key: '7th class',
+        displayValue: '7th Class'
+      },
+      {
+        key: '8th class',
+        displayValue: '8th Class'
+      },
+      {
+        key: '9th class',
+        displayValue: '9th Class'
+      },
+      {
+        key: '10th class',
+        displayValue: '10th Class'
+      },
+      {
+        key: 'others',
+        displayValue: 'Others'
+      }
+    ],
+    intermediateOptions: [
+      {
+        key: 'mpc',
+        displayValue: 'MPC'
+      },
+      {
+        key: 'bipc',
+        displayValue: 'BIPC'
+      },
+      {
+        key: 'mec',
+        displayValue: 'MEC'
+      },
+      {
+        key: 'cec',
+        displayValue: 'CEC'
+      },
+      {
+        key: 'others',
+        displayValue: 'others'
+      }
+    ],
+    diplomaOptions: [
+      {
+        key: 'mpc-diploma',
+        displayValue: 'MPC-diploma'
+      },
+      {
+        key: 'bipc-diploma',
+        displayValue: 'BIPC-diploma'
+      },
+      {
+        key: 'mec-diploma',
+        displayValue: 'MEC-diploma'
+      },
+      {
+        key: 'cec-diploma',
+        displayValue: 'CEC-diploma'
+      },
+      {
+        key: 'others-diploma',
+        displayValue: 'others-diploma'
+      }
+    ],
+    ugOptions: [
+      {
+        key: 'cse',
+        displayValue: 'CSE'
+      },
+      {
+        key: 'ece',
+        displayValue: 'ECE'
+      },
+      {
+        key: 'eee',
+        displayValue: 'EEE'
+      },
+      {
+        key: 'mech',
+        displayValue: 'MECH'
+      },
+      {
+        key: 'it',
+        displayValue: 'IT'
+      },
+      {
+        key: 'others',
+        displayValue: 'Others'
+      }
+    ]
+  }
+  
   @Output()
   educationalInfoValidEvent: EventEmitter<any> = new EventEmitter<any>();
   constructor() { }
@@ -48,7 +200,26 @@ export class EducationalDetailsComponent implements OnInit {
   }
  
   educationalFormValidate(f: NgForm) {
+    this.educationalInfoObj.preferredSubject = this.weekSubj.join();
     this.educationalInfoValidEvent.emit(f);
   }
 
+  qualificationChange() {
+    if(this.educationalInfoObj.qualification === 'schooling') {
+      this.branchOptions = this.branchOptionsData.schoolOptions;
+    } else if(this.educationalInfoObj.qualification === 'intermediate'){
+      this.branchOptions = this.branchOptionsData.intermediateOptions;
+    } else if(this.educationalInfoObj.specialization === 'diploma') {
+      this.branchOptions = this.branchOptionsData.diplomaOptions;
+    } else if(this.educationalInfoObj.qualification === 'ug') {
+      this.branchOptions = this.branchOptionsData.ugOptions;
+    }
+  }
+  othersFieldValidation() {
+    if(this.educationalInfoObj.branch === 'others') {
+      this.isOthersField = true;
+    } else {
+      this.isOthersField = false;
+    }
+  }
 }
