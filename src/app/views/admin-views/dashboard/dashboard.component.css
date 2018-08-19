@@ -56,4 +56,8 @@ background: linear-gradient(to right, rgba(250,125,0,1) 0%, rgba(204,102,0,0.72)
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fa7d00', endColorstr='#cc6600', GradientType=1 );
 }
 
+mat-card:hover{
+    margin-top: 0px;
+    transition: ease 1s;
+  }
         

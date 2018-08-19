@@ -15,3 +15,11 @@
     color: darkslategrey;
     font-weight: bold;
 }
+
+.full_width {
+    width: 100%;
+}
+
+.icon_red {
+    color: red
+}

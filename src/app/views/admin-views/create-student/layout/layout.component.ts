@@ -58,7 +58,8 @@ export class LayoutComponent implements OnInit {
         closeOnNavigation: true,
         disableClose: true,
         data: {
-          message: 'User Already Exist Please Try some other'
+          message: 'User Already Exist Please Try some other',
+          decide: false
         }
       })
     }
