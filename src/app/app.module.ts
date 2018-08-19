@@ -1,9 +1,6 @@
+// Predefined Modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-// Predefined components
-import { AppComponent } from './app.component';
-
-// Predefined Modules
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppRoutingModule } from './app-routing.module';
@@ -16,10 +13,13 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 // Custom modules
 import {MaterialModule} from './commonModule/material/material.module';
-import {AppLoaderComponent} from './commonModule/app-loader/app-loader.component';
+
+// Custom Service
 import {AppLoaderService} from './commonModule/app-loader/app-loader.service';
 
 // Custom Components
+import { AppComponent } from './app.component';
+import {AppLoaderComponent} from './commonModule/app-loader/app-loader.component';
 import { AuthLayoutComponent } from './layout/auth-layout/auth-layout.component';
 import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
 import { NavigationBarComponent } from './layout/navigation-bar/navigation-bar.component';

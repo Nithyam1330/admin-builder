@@ -1,5 +1,6 @@
+
 <table mat-table [dataSource]="dataSource">
- <!-- Student Name Column -->
+  <!-- Student Name Column -->
   <ng-container matColumnDef="studentName">
     <mat-header-cell *matHeaderCellDef> STUDENT NAME </mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.personalInfo.studentName | titlecase}} </mat-cell>
@@ -35,12 +36,17 @@
     <mat-cell *matCellDef="let element"> {{element.confirmInfo.status | uppercase}} </mat-cell>
   </ng-container>
 
+  <!-- Status Column -->
+  <ng-container matColumnDef="icons">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <mat-icon class="icon_red" (click)="deleteStudent(element)">delete</mat-icon>
+      </mat-cell>
+    </ng-container>
   <!-- Row -->
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: displayedColumns;" class="pointer"></mat-row>>
+  <mat-row class="" *matRowDef="let row; columns: displayedColumns;" class="pointer"></mat-row>>
 </table>
 
-<mat-paginator [length]="paginationLength"
-              [pageSize]="5"
-              [pageSizeOptions]="[5, 10, 25, 100]">
+<mat-paginator [length]="paginationLength" [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]">
 </mat-paginator>

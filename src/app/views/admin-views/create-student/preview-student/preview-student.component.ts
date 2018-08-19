@@ -7,8 +7,7 @@ import {MAT_DIALOG_DATA} from '@angular/material';
 })
 export class PreviewStudentComponent implements OnInit {
   dataObtained: any;
-  constructor(@Inject(MAT_DIALOG_DATA) public data) { 
-    console.log(data.studentDetails);
+  constructor(@Inject(MAT_DIALOG_DATA) public data) {
     this.dataObtained = data.studentDetails;
   }
   ngOnInit() {
